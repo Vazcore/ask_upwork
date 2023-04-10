@@ -1,0 +1,24 @@
+
+[data-bs-theme="light"] {
+  .navbar-nav {
+    background-color: white;
+  }
+
+  a {
+    color: black;
+  }
+}
+
+[data-bs-theme="dark"] {
+  .navbar-nav {
+    background-color: green;
+  }
+
+  a {
+    color: red;
+  }  
+}
+
+.z_navbar_first > li {
+  margin-right: 100px; /* Adjust this value to increase or decrease the space between menu items */
+}

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ThemeStateService } from '../state/theme-state';
 
 @Component({
   selector: 'app-color-toggle',
@@ -8,9 +9,13 @@ import { Component } from '@angular/core';
 export class ColorToggleComponent {
   isDarkMode = false;
 
+  constructor(
+    private themeState: ThemeStateService,
+  ) {}
+
   toggleColorMode() {
     this.isDarkMode = !this.isDarkMode;
-    const theme = this.isDarkMode ? 'dark' : '';
-    document.documentElement.setAttribute('data-bs-theme', theme);
+    this.themeState.toggleDarkMode(this.isDarkMode);
+    
   }
 }
